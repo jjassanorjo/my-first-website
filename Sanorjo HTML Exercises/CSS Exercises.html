@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CSS Exercises</title>
+  <style>
+    /* Tag Selectors */
+    h1 { color: blue; }
+    p { font-size: 18px; line-height: 1.6; }
+    h2 { text-align: center; }
+    body { background-color: lightgray; }
+    h3 { text-transform: uppercase; }
+    a { color: red; text-decoration: none; }
+    ul { list-style-type: square; }
+    ol { list-style-type: upper-roman; }
+    li { margin: 5px; }
+    table { border: 1px solid black; }
+    th { background-color: lightblue; }
+    td { padding: 10px; }
+    img { width: 200px; border-radius: 10px; }
+    button { background-color: green; color: white; padding: 8px; }
+    form { border: 1px solid gray; padding: 15px; }
+    input { border: 2px solid blue; }
+    textarea { width: 300px; height: 100px; }
+    audio { width: 250px; }
+    video { border: 5px solid black; }
+
+    /* ID Selectors */
+    #main-title { color: darkred; font-size: 30px; }
+    #intro-text { font-style: italic; }
+    #student-table { border-collapse: collapse; }
+    #profile-pic { border-radius: 50%; }
+    #submit-btn { background-color: orange; padding: 10px; }
+    #container { margin: 20px; padding: 20px; background-color: #eee; }
+    #email-field { border: 1px solid red; }
+    #home-link { color: purple; }
+    #login-form { background: #f9f9f9; padding: 15px; }
+    #footer-text { text-align: right; }
+
+    /* Class Selectors */
+    .paragraph { font-family: Arial, sans-serif; }
+    .title { color: navy; }
+    .btn { background-color: teal; color: white; padding: 10px 15px; }
+    .rounded-img { border-radius: 15px; }
+    .card { border: 1px solid #ccc; padding: 20px; margin: 10px; }
+    .highlight { background-color: yellow; }
+    .nav-link { color: darkgreen; margin-right: 15px; }
+    .list-item { font-weight: bold; }
+    .input-field { border: 2px solid gray; padding: 5px; }
+    .footer-note { font-size: 12px; color: gray; }
+  </style>
+</head>
+<body>
+
+  <h1 id="main-title">Hello World</h1>
+  <p id="intro-text" class="paragraph">This is a styled paragraph.</p>
+  <h2 class="title">Subtitle</h2>
+  <h3>sample heading</h3>
+
+  <a id="home-link" class="nav-link" href="#">Home</a>
+  <ul>
+    <li class="list-item">List Item 1</li>
+  </ul>
+
+  <table id="student-table">
+    <tr><th>Name</th><th>Age</th></tr>
+    <tr><td>Juan</td><td>20</td></tr>
+  </table>
+
+  <img id="profile-pic" class="rounded-img" src="https://via.placeholder.com/200">
+
+  <form id="login-form">
+    <input id="email-field" class="input-field" type="text" placeholder="Email">
+    <button id="submit-btn" class="btn">Submit</button>
+  </form>
+
+  <p id="footer-text" class="footer-note">Footer Text</p>
+
+</body>
+</html>

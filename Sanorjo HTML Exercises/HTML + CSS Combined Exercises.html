@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>HTML + CSS Combined Exercises (41–60)</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
+    section { border: 2px solid #ccc; margin: 20px; padding: 20px; }
+    section h2 { margin-top: 0; color: darkblue; }
+    /* Common Styles reused */
+    .btn { background: green; color: white; padding: 10px 20px; border: none; cursor: pointer; }
+    .btn:hover { background: darkgreen; }
+    .card { border: 1px solid #ccc; border-radius: 5px; padding: 20px; width: 250px; margin: 10px auto; box-shadow: 2px 2px 8px rgba(0,0,0,0.1); }
+    .modal { display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: white; padding: 20px; border: 1px solid black; }
+    .modal.show { display: block; }
+    .row { display: flex; }
+    .col { flex: 1; margin: 5px; padding: 20px; background: lightblue; }
+    .dropdown { position: relative; display: inline-block; }
+    .dropdown-content { display: none; position: absolute; background: white; border: 1px solid #ccc; min-width: 120px; }
+    .dropdown:hover .dropdown-content { display: block; }
+    .center { display: flex; justify-content: center; align-items: center; height: 200px; }
+    header.sticky { position: sticky; top: 0; background: lightblue; padding: 15px; }
+    footer.fixed { position: fixed; bottom: 0; width: 100%; background: gray; color: white; text-align: center; padding: 10px; }
+    .col-3 { float: left; width: 33.3%; padding: 20px; box-sizing: border-box; }
+    .gallery { display: flex; flex-wrap: wrap; }
+    .gallery img { width: 30%; margin: 1%; }
+    .profile-card { width: 250px; border: 1px solid #ccc; border-radius: 5px; padding: 15px; text-align: center; }
+    .profile-card img { width: 100px; border-radius: 50%; }
+    .banner { background: lightblue; padding: 50px; text-align: center; }
+    nav { display: flex; justify-content: space-between; background: #333; padding: 10px; }
+    nav a { color: white; margin: 0 10px; text-decoration: none; }
+    .pricing { display: flex; justify-content: center; }
+    .plan { border: 1px solid #ccc; padding: 20px; margin: 10px; width: 200px; text-align: center; }
+    .sidebar { width: 200px; float: left; background: lightgray; height: 100vh; padding: 20px; }
+    .content { margin-left: 220px; padding: 20px; }
+  </style>
+</head>
+<body>
+
+  <section>
+    <h2>41. Simple Header</h2>
+    <header style="background-color: lightblue; padding: 20px; text-align: center;">
+      <h1>My Website</h1>
+    </header>
+  </section>
+
+  <section>
+    <h2>42. Two-Column Layout (Float)</h2>
+    <div style="float: left; width: 50%; background: lightgray; padding: 20px;">Left Content</div>
+    <div style="float: right; width: 50%; background: lightyellow; padding: 20px;">Right Content</div>
+    <div style="clear: both;"></div>
+  </section>
+
+  <section>
+    <h2>43. Responsive Image</h2>
+    <img src="https://via.placeholder.com/600x300" alt="Sample" style="max-width:100%; height:auto;">
+  </section>
+
+  <section>
+    <h2>44. Navigation Bar</h2>
+    <ul style="list-style-type:none; background:#333; padding:0; margin:0;">
+      <li style="display:inline; margin-right:20px;"><a href="#" style="color:white; text-decoration:none;">Home</a></li>
+      <li style="display:inline; margin-right:20px;"><a href="#" style="color:white; text-decoration:none;">About</a></li>
+      <li style="display:inline;"><a href="#" style="color:white; text-decoration:none;">Contact</a></li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>45. Styled Button</h2>
+    <button class="btn">Click Me</button>
+  </section>
+
+  <section>
+    <h2>46. Simple Form Styling</h2>
+    <form style="width:300px; margin:20px auto;">
+      <input type="text" placeholder="Name" style="width:100%; margin-bottom:10px; padding:8px;">
+      <input type="email" placeholder="Email" style="width:100%; margin-bottom:10px; padding:8px;">
+      <textarea placeholder="Message" style="width:100%; margin-bottom:10px; padding:8px;"></textarea>
+      <button>Submit</button>
+    </form>
+  </section>
+
+  <section>
+    <h2>47. Card Layout</h2>
+    <div class="card">
+      <h3>Card Title</h3>
+      <p>Some card content.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>48. Modal Simulation</h2>
+    <button onclick="document.getElementById('myModal').classList.add('show')">Open Modal</button>
+    <div id="myModal" class="modal">
+      <p>This is a modal!</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>49. Flexbox Grid Layout</h2>
+    <div class="row">
+      <div class="col">Column 1</div>
+      <div class="col">Column 2</div>
+      <div class="col">Column 3</div>
+    </div>
+  </section>
+
+  <section>
+    <h2>50. Dropdown Menu</h2>
+    <div class="dropdown">
+      <button>Menu</button>
+      <div class="dropdown-content">
+        <p>Option 1</p>
+        <p>Option 2</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>51. Centering Content</h2>
+    <div class="center">
+      <h1>Centered Text</h1>
+    </div>
+  </section>
+
+  <section>
+    <h2>52. Sticky Header</h2>
+    <header class="sticky">Sticky Header</header>
+    <div style="height:200px;">Scroll down...</div>
+    <div style="height:200px;">Keep scrolling...</div>
+  </section>
+
+  <section>
+    <h2>53. Fixed Footer</h2>
+    <p>Page content here...</p>
+    <footer class="fixed">Fixed Footer</footer>
+  </section>
+
+  <section>
+    <h2>54. Responsive Columns</h2>
+    <div class="col-3">Column 1</div>
+    <div class="col-3">Column 2</div>
+    <div class="col-3">Column 3</div>
+    <div style="clear:both;"></div>
+  </section>
+
+  <section>
+    <h2>55. Image Gallery</h2>
+    <div class="gallery">
+      <img src="https://via.placeholder.com/150">
+      <img src="https://via.placeholder.com/150">
+      <img src="https://via.placeholder.com/150">
+    </div>
+  </section>
+
+  <section>
+    <h2>56. Profile Card</h2>
+    <div class="profile-card">
+      <img src="https://via.placeholder.com/100">
+      <h3>John Doe</h3>
+      <p>Web Developer</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>57. Simple Banner</h2>
+    <div class="banner">
+      <h1>Welcome to My Website</h1>
+      <p>This is a hero banner</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>58. Responsive Navbar</h2>
+    <nav>
+      <div>Logo</div>
+      <div>
+        <a href="#">Home</a>
+        <a href="#">About</a>
+      </div>
+    </nav>
+  </section>
+
+  <section>
+    <h2>59. Pricing Table</h2>
+    <div class="pricing">
+      <div class="plan">Basic</div>
+      <div class="plan">Standard</div>
+      <div class="plan">Premium</div>
+    </div>
+  </section>
+
+  <section>
+    <h2>60. Sidebar Layout</h2>
+    <div class="sidebar">Sidebar</div>
+    <div class="content">Main Content</div>
+  </section>
+
+</body>
+</html>
