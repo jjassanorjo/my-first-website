@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BULabels-Page</title>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.6.0/fonts/remixicon.css" rel="stylesheet" />
+
+    <!-- Scripts -->
+    <script src="script.js" defer></script>
+</head>
+
+
+    <body class="cart-section">
+
+        <nav>
+            <div class="nav__header">
+                <div class="nav__logo">
+                    <a href="#">
+                        <img src="images/logo.png" alt="logo" />
+                    </a>
+                </div>
+
+                <div class="nav__menu__btn" id="menu-btn">
+                    <i class="ri-menu-3-line"></i>
+                </div>
+            </div>
+
+            <ul class="nav__links" id="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="account.html">Account</a></li>
+            </ul>
+
+            <div class="cart">
+                <a href="cart.html"><img src="images/cart.png" alt="cart"></a>
+            </div>
+        </nav>
+    <!--------------Cart Item Detail----------->
+
+    <div class="small container cart-page">
+        <table>
+            <tr>
+                <th>Product</th>
+                <th>Quantity</th>
+                <th>Subtotal</th>
+            </tr>
+            <tr>
+                <td>
+                    <div class="cart-info">
+                        <img src="images/category-2.png">
+                        <div>
+                            <p>Bicol University Lanyayd</p>
+                            <small>Price: $50.00</small>
+                            <a href="">Remove</a>
+                        </div>
+                    </div>
+                </td>
+                <td><input type="number" value="1"></td>
+                <td>$50.00</td>
+            </tr>
+
+            <tr>
+                <td>
+                    <div class="cart-info">
+                        <img src="images/product-1.jpg">
+                        <div>
+                            <p>BUNIQUE Varsity Jacket</p>
+                            <small>Price: $60.00</small>
+                            <a href="">Remove</a>
+                        </div>
+                    </div>
+                </td>
+                <td><input type="number" value="1"></td>
+                <td>$60.00</td>
+            </tr>
+
+            <tr>
+                <td>
+                    <div class="cart-info">
+                        <img src="images/product-9.jpg">
+                        <div>
+                            <p>BU Labels Hoodie Jacket</p>
+                            <small>Price: $75.00</small>
+                            <a href="">Remove</a>
+                        </div>
+                    </div>
+                </td>
+                <td><input type="number" value="1"></td>
+                <td>$75.00</td>
+            </tr>
+        </table>
+
+        <div class="total-price">
+            <table>
+                <tr>
+                    <td>Subtotal</td>
+                    <td>$200.00</td>
+                </tr>
+                <tr>
+                    <td>Shipping Fee</td>
+                    <td>$30.00</td>
+                </tr>
+                <tr>
+                    <td>Total</td>
+                    <td>$230.00</td>
+                </tr>
+
+            </table>
+        </div>
+    </div>
+
+ 
+    <!-- ======================= FOOTER ======================= -->
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+
+                <div class="footer-col-1">
+                    <h3>Download Our App</h3>
+                    <p>Download App for Android and iOS mobile phones.</p>
+                    <div class="app-logo">
+                        <img src="images/play-store.png" alt="play store" />
+                        <img src="images/app-store.png" alt="app store" />
+                    </div>
+                </div>
+
+                <div class="footer-col-2">
+                    <img src="images/bunique.PNG" alt="logo" />
+                    <p>Lorem Ipsum is simply dummy text of the printing industry.</p>
+                </div>
+
+                <div class="footer-col-3">
+                    <h3>Useful Links</h3>
+                    <ul>
+                        <li>Coupons</li>
+                        <li>Blog Post</li>
+                        <li>Return Policy</li>
+                        <li>Join Affiliate</li>
+                    </ul>
+                </div>
+
+                <div class="footer-col-4">
+                    <h3>Follow Us</h3>
+                    <ul>
+                        <li>Facebook</li>
+                        <li>Twitter</li>
+                        <li>Instagram</li>
+                        <li>Youtube</li>
+                    </ul>
+                </div>
+            </div>
+
+            <hr />
+            <a href="#" class="copyright">Copyright 2025 - BU Labels</a>
+        </div>
+    </div>        
+
+    <!-----------------JS----------------------->
+    <script>
+        //declare variable MenuItems which take ul having id "MenuItems"
+        
+        var MenuItems = document.getElementById("MenuItems");
+        MenuItems.style.maxHeight = "0px";//by default, we have set menu or dropdown menu height to 0px, means it is close by default
+        
+        function menutoggle()//this is the function which we have called above in nav which works on small devices and users click on it
+        {
+            if (MenuItems.style.maxHeight =="0px")//when user click on it and if it is closed or its height is 0px, then it will open or it should have heigt of 200px upon clicking
+            {
+                MenuItems.style.maxHeight = "200px"
+            }
+            else//if user not clicked or it has already opened, then it will upon clicking again closed
+            {
+                MenuItems.style.maxHeight = "0px" 
+            }
+        
+        }
+    </script>    
+
+    </body>
+
+</html>
