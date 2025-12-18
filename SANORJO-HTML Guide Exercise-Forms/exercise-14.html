@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercise 14 - Error Highlighting</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        .error { border: 2px solid red; }
+    </style>
+</head>
+<body>
+    <form id="formCheck">
+        <label for="name">Name:</label>
+        <input type="text" id="name" placeholder="Name">
+        <button type="submit">Submit</button>
+    </form>
+
+    <script>
+        $("#formCheck").submit(function(e) {
+            e.preventDefault();
+            if ($("#name").val() === "") {
+                $("#name").addClass("error");
+            } else {
+                $("#name").removeClass("error");
+                alert("Form submitted!");
+            }
+        });
+    </script>
+</body>
+</html>

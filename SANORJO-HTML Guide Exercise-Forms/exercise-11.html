@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercise 11 - jQuery Toggle Password</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <label for="pwd">Password:</label>
+    <input type="password" id="pwd">
+    <button id="toggle">Show/Hide</button>
+
+    <script>
+        $("#toggle").click(function() {
+            let pwd = $("#pwd");
+            pwd.attr("type", pwd.attr("type") === "password" ? "text" : "password");
+        });
+    </script>
+</body>
+</html>

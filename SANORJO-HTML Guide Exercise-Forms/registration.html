@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercise 15 - Full Registration Form</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        .error { border: 2px solid red; }
+        form { max-width: 400px; margin: auto; }
+        label { display: block; margin-top: 10px; }
+    </style>
+</head>
+<body>
+    <h2>Registration Form</h2>
+    <form id="registrationForm">
+        <!-- Username -->
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+
+        <!-- Email -->
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <!-- Password -->
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+
+        <!-- Confirm Password -->
+        <label for="confirmPassword">Confirm Password:</label>
+        <input type="password" id="confirmPassword" name="confirmPassword" required>
+        <button type="button" id="togglePwd">Show/Hide Passwords</button>
+
+        <!-- Gender (Radio) -->
+        <p>Gender:</p>
+        <input type="radio" id="male" name="gender" value="male">
+        <label for="male">Male</label>
+        <input type="radio" id="female" name="gender" value="female">
+        <label for="female">Female</label>
+
+        <!-- Interests (Checkboxes) -->
+        <p>Interests:</p>
+        <input type="checkbox" id="html" name="interest" value="HTML">
+        <label for="html">HTML</label>
+        <input type="checkbox" id="css" name="interest" value="CSS">
+        <label for="css">CSS</label>
+        <input type="checkbox" id="js" name="interest" value="JavaScript">
+        <label for="js">JavaScript</label>
+
+        <!-- Country (Dropdown) -->
+        <label for="country">Country:</label>
+        <select id="country" name="country">
+            <option value="ph">Philippines</option>
+            <option value="us">United States</option>
+            <option value="jp">Japan</option>
+        </select>
+
+        <!-- Bio with live count -->
+        <label for="bio">Bio (max 100 chars):</label>
+        <textarea id="bio" name="bio" maxlength="100"></textarea>
+        <p id="charCount">0/100</p>
+
+        <!-- Submit -->
+        <button type="submit">Register</button>
+    </form>
+
+    <script>
+        // Live character count
+        $("#bio").on("input", function() {
+            $("#charCount").text($(this).val().length + "/100");
+        });
+
+        // Toggle password visibility
+        $("#togglePwd").click(function() {
+            let pwd1 = $("#password");
+            let pwd2 = $("#confirmPassword");
+            let type = pwd1.attr("type") === "password" ? "text" : "password";
+            pwd1.attr("type", type);
+            pwd2.attr("type", type);
+        });
+
+        // Form validation
+        $("#registrationForm").submit(function(e) {
+            e.preventDefault();
+            let valid = true;
+
+            // Check empty required fields
+            $("#registrationForm input[required], #registrationForm textarea[required]").each(function() {
+                if ($(this).val() === "") {
+                    $(this).addClass("error");
+                    valid = false;
+                } else {
+                    $(this).removeClass("error");
+                }
+            });
+
+            // Check password match
+            if ($("#password").val() !== $("#confirmPassword").val()) {
+                alert("Passwords do not match!");
+                valid = false;
+            }
+
+            if (valid) {
+                alert("Registration successful!");
+                // In a real app, you would send data to a server here
+            } else {
+                alert("Please fill in all required fields correctly.");
+            }
+        });
+    </script>
+</body>
+</html>

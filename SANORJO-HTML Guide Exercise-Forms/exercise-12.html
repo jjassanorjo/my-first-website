@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercise 12 - jQuery Character Count</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <label for="bio">Bio (max 100 chars):</label><br>
+    <textarea id="bio" maxlength="100"></textarea>
+    <p id="count">0/100</p>
+
+    <script>
+        $("#bio").on("input", function() {
+            $("#count").text($(this).val().length + "/100");
+        });
+    </script>
+</body>
+</html>
